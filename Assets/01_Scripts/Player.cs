@@ -86,7 +86,7 @@ public class Player : MonoBehaviour
         // Si presionas Espacio y el script detecta que estás pisando el suelo
         if (Keyboard.current.spaceKey.wasPressedThisFrame && isGrounded)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);   
         }
     }
 
