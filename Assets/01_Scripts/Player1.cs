@@ -22,6 +22,7 @@ public class Player1 : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     private SpriteRenderer spriteRenderer;
+    private PlayerFreezeController freezeController;
     private float horizontalInput;
     private bool isGrounded;
     private bool jumpPressed;
@@ -31,6 +32,7 @@ public class Player1 : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        freezeController = GetComponent<PlayerFreezeController>();
 
         if (rb == null)
         {
@@ -47,15 +49,18 @@ public class Player1 : MonoBehaviour
             Debug.LogWarning("[Player1] ADVERTENCIA: Ground Layer no esta asignada en el Inspector! El suelo no se detectara. Selecciona la capa del suelo en el campo 'Ground Layer'.");
         }
 
-        // Verificar que groundCheckPoint existe
-        if (groundCheckPoint == null)
-        {
-            Debug.LogWarning("[Player1] ADVERTENCIA: Ground Check Point no esta asignado. Se usara la posicion del personaje. Crea un objeto hijo en los pies y arrastralo aqui para mejor precision.");
-        }
+// Verificar que groundCheckPoint existe (opcional - para mejor precision)
+        // if (groundCheckPoint == null)
+        // {
+        //     Debug.LogWarning("[Player1] Ground Check Point no asignado. Se usara posicion del personaje.");
+        // }
     }
 
     private void Update()
     {
+        // Guard: si el player está congelado (transición de escena), no procesar input
+        if (freezeController != null && freezeController.IsFrozen) return;
+
         CheckGround();
         HandleMovementInput();
         HandleJumpInput();
@@ -65,6 +70,9 @@ public class Player1 : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // Guard: si el player está congelado, no aplicar movimiento físico
+        if (freezeController != null && freezeController.IsFrozen) return;
+
         ApplyMovement();
         ApplyJump();
     }
@@ -93,14 +101,14 @@ public class Player1 : MonoBehaviour
     {
         if (Keyboard.current == null) return;
 
-        if (Keyboard.current.spaceKey.wasPressedThisFrame && isGrounded)
+if (Keyboard.current.spaceKey.wasPressedThisFrame && isGrounded)
         {
             jumpPressed = true;
-            if (showDebugLogs) Debug.Log("[Player1] Salto presionado y detectado suelo -> Saltando!");
+            // if (showDebugLogs) Debug.Log("[Player1] Salto presionado y detectado suelo -> Saltando!");
         }
-        else if (Keyboard.current.spaceKey.wasPressedThisFrame && !isGrounded && showDebugLogs)
+else if (Keyboard.current.spaceKey.wasPressedThisFrame && !isGrounded && showDebugLogs)
         {
-            Debug.Log("[Player1] Salto presionado PERO NO HAY SUELO (isGrounded = false). No salta.");
+            // Debug.Log("[Player1] Salto presionado PERO NO HAY SUELO (isGrounded = false). No salta.");
         }
     }
 
@@ -138,35 +146,35 @@ public class Player1 : MonoBehaviour
 
         // Metodo 2: Raycast de respaldo (mas confiable en algunos casos)
         // Dispara un rayo hacia abajo desde el centro del personaje
-        if (!isGrounded)
+if (!isGrounded)
         {
             Vector2 rayOrigin = (Vector2)transform.position;
             RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, raycastDistance, groundLayer);
             isGrounded = hit.collider != null;
 
-            if (showDebugLogs && hit.collider != null)
-            {
-                Debug.Log($"[Player1] Raycast detecto suelo en: {hit.collider.name}");
-            }
+            // if (showDebugLogs && hit.collider != null)
+            // {
+            //     Debug.Log($"[Player1] Raycast detecto suelo en: {hit.collider.name}");
+            // }
         }
 
-        if (showDebugLogs && !isGrounded && Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame)
-        {
-            Debug.Log("[Player1] isGrounded = FALSE. Verifica que:\n" +
-                     "1. Los objetos del suelo tengan un Collider2D\n" +
-                     "2. Los objetos del suelo esten en la capa seleccionada en 'Ground Layer'\n" +
-                     "3. El Ground Check Point este en los pies del personaje\n" +
-                     "4. En Scene view activa Gizmos para ver el area de deteccion (rojo)");
-        }
+        // if (showDebugLogs && !isGrounded && Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame)
+        // {
+        //     Debug.Log("[Player1] isGrounded = FALSE. Verifica que:\n" +
+        //              "1. Los objetos del suelo tengan un Collider2D\n" +
+        //              "2. Los objetos del suelo esten en la capa seleccionada en 'Ground Layer'\n" +
+        //              "3. El Ground Check Point este en los pies del personaje\n" +
+        //              "4. En Scene view activa Gizmos para ver el area de deteccion (rojo)");
+        // }
     }
 
     private void HandleAttackInput()
     {
         if (Mouse.current == null || anim == null) return;
 
-        if (Mouse.current.leftButton.wasPressedThisFrame)
+if (Mouse.current.leftButton.wasPressedThisFrame)
         {
-            Debug.Log("[Player1] Ataque ejecutado");
+            // Debug.Log("[Player1] Ataque ejecutado");
             anim.SetTrigger("Ataque");
         }
     }
@@ -198,5 +206,13 @@ public class Player1 : MonoBehaviour
 
         string status = isGrounded ? "GROUNDED: SI" : "GROUNDED: NO";
         GUI.Label(new Rect(10, 10, 200, 30), status, style);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Trigger1"))
+        {
+            // Debug.Log("[Player1] Trigger1 detectado: " + collision.name);
+        }
     }
 }

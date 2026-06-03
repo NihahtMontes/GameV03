@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 339c201604b4b554ea37b0b4283df62a
+guid: ad056d7d81aa4d041a35dcc25eb7792c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8535418885066366335
-    second: Escenario Egipcio 3_0
+      213: -6703137100604776476
+    second: SalaCombate Nordico_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Escenario Egipcio 3_0
+      name: SalaCombate Nordico_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 18265722fb91c8980800000000000000
-      internalID: -8535418885066366335
+      spriteID: 4efd5bd525ca9f2a0800000000000000
+      internalID: -6703137100604776476
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Escenario Egipcio 3_0: -8535418885066366335
+      SalaCombate Nordico_0: -6703137100604776476
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

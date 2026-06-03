@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 339c201604b4b554ea37b0b4283df62a
+guid: ef16725c017cd1f4a923cdc5ae03eed6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8535418885066366335
-    second: Escenario Egipcio 3_0
+      213: 7749830833479360246
+    second: Techo Egipcio_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Escenario Egipcio 3_0
+      name: Techo Egipcio_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 512
-        height: 256
+        height: 129
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 18265722fb91c8980800000000000000
-      internalID: -8535418885066366335
+      spriteID: 6fe18ea251eec8b60800000000000000
+      internalID: 7749830833479360246
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Escenario Egipcio 3_0: -8535418885066366335
+      Techo Egipcio_0: 7749830833479360246
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
