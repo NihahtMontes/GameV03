@@ -22,14 +22,28 @@ public class UI_Vida : MonoBehaviour
     {
         vidaActual = Mathf.Clamp(vidaActual, 0, corazonesAnimators.Length);
 
+        // 1. SI LA VIDA BAJA: Hace explotar los corazones usando tu animación original
         while (vidaVisualActual > vidaActual)
         {
             vidaVisualActual--;
 
             if (corazonesAnimators[vidaVisualActual] != null)
             {
-                corazonesAnimators[vidaVisualActual].SetTrigger("Explotar");
+                // Forzamos a reproducir la animación de explosión desde el inicio
+                corazonesAnimators[vidaVisualActual].Play("Corazon_Explotar", 0, 0f);
             }
+        }
+
+        // 2. SI LA VIDA SUBE (Respawn): Vuelve a prender los corazones con tu animación de latido
+        while (vidaVisualActual < vidaActual)
+        {
+            if (corazonesAnimators[vidaVisualActual] != null)
+            {
+                // ¡CORREGIDO CON TU NOMBRE REAL! Forzamos a reproducir el latido (Idle)
+                corazonesAnimators[vidaVisualActual].Play("Corazon_Latir", 0, 0f);
+            }
+
+            vidaVisualActual++;
         }
     }
 }

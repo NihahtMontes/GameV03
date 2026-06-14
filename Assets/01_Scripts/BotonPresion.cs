@@ -3,33 +3,51 @@ using UnityEngine;
 
 public class BotonPresion : MonoBehaviour
 {
-    private float yOriginal = -17.499f;
-    private float yPresionado = -18.57f;
+    [Header("Configuración de Movimiento")]
+    [Tooltip("Cuánto va a bajar el botón en el eje Y cuando lo pisen. Ejemplo: 0.15 o 0.2")]
+    [SerializeField] private float distanciaHundimiento = 0.15f;
 
+    [Header("Tiempos y Velocidades")]
     [SerializeField] private float velocidadAparicion = 2f;
-
     [SerializeField] private float tiempoEsperaSegundaPlataforma = 3f;
 
     [Header("Plataformas a Activar")]
     [SerializeField] private SpriteRenderer subida1;
     [SerializeField] private SpriteRenderer subida2;
 
+    // Posiciones calculadas dinámicamente según dónde pongas el botón en el mapa
+    private float yOriginal;
+    private float yPresionado;
+
     private bool secuenciasActivada = false;
     private Coroutine rutinaPlataformas;
     private Coroutine rutinaSalida;
 
+    // Contador cooperativo para evitar que suba si queda alguien encima
+    private int jugadoresEncima = 0;
+
     private void Start()
     {
+        // Guardamos la posición Y exacta que tiene en el Inspector de Unity
+        yOriginal = transform.localPosition.y;
+
+        // Calculamos la posición presionada restándole solo un poquito a la original
+        yPresionado = yOriginal - distanciaHundimiento;
+
+        // Nos aseguramos de que inicie en su lugar
         transform.localPosition = new Vector3(transform.localPosition.x, yOriginal, transform.localPosition.z);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        // Detecta tanto al Samurái (Player) como al Mago (Player2)
+        if (collision.CompareTag("Player") || collision.CompareTag("Player2"))
         {
+            jugadoresEncima++;
+
             if (rutinaSalida != null) StopCoroutine(rutinaSalida);
 
-            // Baja el botón al instante
+            // Baja el botón a su nueva posición calculada
             transform.localPosition = new Vector3(transform.localPosition.x, yPresionado, transform.localPosition.z);
 
             if (!secuenciasActivada)
@@ -43,33 +61,35 @@ public class BotonPresion : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") || collision.CompareTag("Player2"))
         {
-            // Mantiene el botón abajo firme
+            // Mantiene el botón abajo firme mientras haya héroes encima
             transform.localPosition = new Vector3(transform.localPosition.x, yPresionado, transform.localPosition.z);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") || collision.CompareTag("Player2"))
         {
-            if (rutinaSalida != null) StopCoroutine(rutinaSalida);
+            jugadoresEncima--;
 
-            // COMPROBACIÓN DE SEGURIDAD: Solo arranca la corrutina si el GameObject está activo
-            if (gameObject.activeInHierarchy)
+            // Solo inicia la secuencia de subida si el botón se quedó completamente vacío
+            if (jugadoresEncima <= 0)
             {
-                rutinaSalida = StartCoroutine(EsperaParaSalir());
-            }
-            else
-            {
-                // Si el botón ya se desactivó por completo, hacemos el cambio de golpe sin corrutinas
-                transform.localPosition = new Vector3(transform.localPosition.x, yOriginal, transform.localPosition.z);
-                if (secuenciasActivada)
+                jugadoresEncima = 0; // Seguridad anti-negativos
+
+                if (rutinaSalida != null) StopCoroutine(rutinaSalida);
+
+                if (gameObject.activeInHierarchy)
                 {
-                    secuenciasActivada = false;
-                    if (subida1 != null) { Color c = subida1.color; c.a = 0f; subida1.color = c; if (subida1.GetComponent<BoxCollider2D>() != null) subida1.GetComponent<BoxCollider2D>().enabled = false; }
-                    if (subida2 != null) { Color c = subida2.color; c.a = 0f; subida2.color = c; if (subida2.GetComponent<BoxCollider2D>() != null) subida2.GetComponent<BoxCollider2D>().enabled = false; }
+                    rutinaSalida = StartCoroutine(EsperaParaSalir());
+                }
+                else
+                {
+                    // Reset instantáneo si el objeto se apaga
+                    transform.localPosition = new Vector3(transform.localPosition.x, yOriginal, transform.localPosition.z);
+                    ResetearPlataformasGolpe();
                 }
             }
         }
@@ -79,14 +99,13 @@ public class BotonPresion : MonoBehaviour
     {
         yield return new WaitForSeconds(0.15f);
 
-        // Sube el botón al instante a su estado original
+        // Regresa suavemente a su posición Y original capturada en el Start
         transform.localPosition = new Vector3(transform.localPosition.x, yOriginal, transform.localPosition.z);
 
         if (secuenciasActivada)
         {
             secuenciasActivada = false;
 
-            // Otra capa de seguridad antes de lanzar la desaparición suave
             if (rutinaPlataformas != null) StopCoroutine(rutinaPlataformas);
 
             if (gameObject.activeInHierarchy)
@@ -94,6 +113,22 @@ public class BotonPresion : MonoBehaviour
                 rutinaPlataformas = StartCoroutine(SecuenciaPlataformas(false));
             }
         }
+    }
+
+    private void ResetearPlataformasGolpe()
+    {
+        if (secuenciasActivada)
+        {
+            secuenciasActivada = false;
+            if (subida1 != null) { Color c = subida1.color; c.a = 0f; subida1.color = c; DesactivarCollider(subida1); }
+            if (subida2 != null) { Color c = subida2.color; c.a = 0f; subida2.color = c; DesactivarCollider(subida2); }
+        }
+    }
+
+    private void DesactivarCollider(SpriteRenderer sprite)
+    {
+        BoxCollider2D collider = sprite.GetComponent<BoxCollider2D>();
+        if (collider != null) collider.enabled = false;
     }
 
     private IEnumerator SecuenciaPlataformas(bool aparecer)

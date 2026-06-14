@@ -6,22 +6,27 @@ public class EnemigoMomia : MonoBehaviour
     [SerializeField] private float velocidadCamino = 2f;
     [SerializeField] private float rangoDeteccionAtaque = 1.2f;
     [SerializeField] private float cooldownAtaque = 1.5f;
-    [SerializeField] private LayerMask capaJugadores; // Configurar como "Default" o la capa de tus héroes
+    [SerializeField] private LayerMask capaJugadores;
 
     [Header("Estadísticas")]
     [SerializeField] private int vidaMax = 3;
 
     [Header("Detección de Obstáculos")]
-    [SerializeField] private LayerMask capaSuelo;
+    // ¡CAMBIADO! Ahora es una máscara genérica para Suelo, Paredes, etc.
+    [SerializeField] private LayerMask capaObstaculos;
     [SerializeField] private Vector2 tamanoCajaCheck = new Vector2(0.2f, 0.4f);
     [SerializeField] private float distanciaFrente = 0.3f;
+
+    [Header("Control de Caída Libre")]
+    [SerializeField] private float tiempoMaxCaidaAlVacio = 3.5f;
+    private float contadorTiempoCayendo = 0f;
 
     private int vidaActual;
     private Rigidbody2D rb;
     private Animator anim;
-    private Transform objetivoActual; // Jugador objetivo dinámico
+    private Transform objetivoActual;
 
-    private int direccion = -1; // -1 = Izquierda, 1 = Derecha
+    private int direccion = -1;
     private float timerAtaque;
     private bool estaMuerto = false;
 
@@ -42,26 +47,48 @@ public class EnemigoMomia : MonoBehaviour
 
         if (timerAtaque > 0) timerAtaque -= Time.deltaTime;
 
-        // Buscamos si hay algún jugador cerca usando el área de colisión física
+        ChequearCaidaAlVacio();
         BuscarJugadoresDinamicos();
 
         if (objetivoActual != null)
         {
             GirarHaciaObjetivo();
             IntentarAtacar();
-            return; // Se frena a atacar e ignora el comportamiento de patrulla
+            return;
         }
 
-        // Si no hay nadie cerca, patrulla tranquilamente
         Patrullar();
+    }
+
+    private void ChequearCaidaAlVacio()
+    {
+        if (rb.linearVelocity.y < -0.1f)
+        {
+            contadorTiempoCayendo += Time.deltaTime;
+
+            if (contadorTiempoCayendo >= tiempoMaxCaidaAlVacio)
+            {
+                SuicidarseEnVacio();
+            }
+        }
+        else
+        {
+            contadorTiempoCayendo = 0f;
+        }
+    }
+
+    private void SuicidarseEnVacio()
+    {
+        estaMuerto = true;
+        rb.linearVelocity = Vector2.zero;
+        Destroy(gameObject);
+        Debug.Log(gameObject.name + " cayó al vacío infinito y fue eliminado correctamente.");
     }
 
     private void BuscarJugadoresDinamicos()
     {
-        // Lanzamos un círculo invisible en su rango para detectar colisionadores en la capa asignada
         Collider2D jugadorDetectado = Physics2D.OverlapCircle(transform.position, rangoDeteccionAtaque, capaJugadores);
 
-        // Verificamos que el colisionador tenga cualquiera de tus dos etiquetas de jugador
         if (jugadorDetectado != null && (jugadorDetectado.CompareTag("Player") || jugadorDetectado.CompareTag("Player2")))
         {
             objetivoActual = jugadorDetectado.transform;
@@ -77,7 +104,9 @@ public class EnemigoMomia : MonoBehaviour
         rb.linearVelocity = new Vector2(direccion * velocidadCamino, rb.linearVelocity.y);
 
         Vector2 posicionCaja = (Vector2)transform.position + new Vector2(direccion * distanciaFrente, -0.2f);
-        bool chocoConObstaculo = Physics2D.OverlapBox(posicionCaja, tamanoCajaCheck, 0f, capaSuelo);
+
+        // ¡CORREGIDO! Ahora revisa si choca contra cualquier objeto en la capa Suelo O Pared
+        bool chocoConObstaculo = Physics2D.OverlapBox(posicionCaja, tamanoCajaCheck, 0f, capaObstaculos);
 
         if (chocoConObstaculo)
         {
@@ -87,18 +116,17 @@ public class EnemigoMomia : MonoBehaviour
 
     private void IntentarAtacar()
     {
-        rb.linearVelocity = new Vector2(0, rb.linearVelocity.y); // Se frena en seco para golpear
+        rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
 
         if (timerAtaque <= 0 && objetivoActual != null)
         {
             anim.SetTrigger("Atacar");
             timerAtaque = cooldownAtaque;
 
-            // Le mandamos el daño directo al script único 'Player' del objetivo que está enfrente
             Player jugadorScript = objetivoActual.GetComponent<Player>();
             if (jugadorScript != null)
             {
-                jugadorScript.RecibirDanio(1); // Le resta 1 corazón
+                jugadorScript.RecibirDanio(1);
             }
         }
     }
@@ -128,6 +156,8 @@ public class EnemigoMomia : MonoBehaviour
         if (estaMuerto) return;
 
         vidaActual -= cantidadDanio;
+
+        if (AudioManager.instance != null) AudioManager.instance.PlaySFX(AudioManager.instance.danioEnemigo);
 
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         if (sr != null) StartCoroutine(EfectoGolpe(sr));

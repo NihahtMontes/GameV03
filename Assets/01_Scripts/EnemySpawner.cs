@@ -17,6 +17,7 @@ public class EnemySpawner : MonoBehaviour
     private List<GameObject> enemigosVivos = new List<GameObject>();
     private int enemigosGeneradosTotales = 0;
     private bool sePuedeSpawnear = true;
+    private bool llaveAparecida = false; // Control interno para que la llave se encienda una sola vez
 
     private void Start()
     {
@@ -26,14 +27,24 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        // Limpiamos constantemente la lista eliminando las momias muertas o caídas al foso
+        enemigosVivos.RemoveAll(item => item == null);
+
+        // CONDICIÓN DE VICTORIA: Si ya no se pueden generar más Y no queda ninguna momia viva en el mapa
+        if (!sePuedeSpawnear && enemigosVivos.Count == 0 && !llaveAparecida)
+        {
+            llaveAparecida = true;
+            AparecerLlave();
+        }
+    }
+
     private IEnumerator RutinaSpawn()
     {
         while (sePuedeSpawnear)
         {
             yield return new WaitForSeconds(tiempoEntreSpawns);
-
-            // Limpiamos la lista eliminando los enemigos que el jugador ya mató (que sean null)
-            enemigosVivos.RemoveAll(item => item == null);
 
             // COMPROBACIONES: Que no supere el límite en pantalla y que no supere la oleada total del nivel
             bool cumpleLimitePantalla = enemigosVivos.Count < maxEnemigosEnPantalla;
@@ -64,5 +75,21 @@ public class EnemySpawner : MonoBehaviour
         // Lo añadimos a la lista de control
         enemigosVivos.Add(nuevoEnemigo);
         enemigosGeneradosTotales++;
+    }
+
+    private void AparecerLlave()
+    {
+        // Busca la llave que está desactivada (oculta) en la escena y la enciende
+        ItemLlave llaveEnEscena = Object.FindFirstObjectByType<ItemLlave>(FindObjectsInactive.Include);
+
+        if (llaveEnEscena != null)
+        {
+            llaveEnEscena.gameObject.SetActive(true);
+            Debug.Log("¡Piso limpio de momias! La llave animada ha aparecido en el mapa.");
+        }
+        else
+        {
+            Debug.LogWarning("Oleada completada, pero no se encontró ningún objeto con el script ItemLlave en la jerarquía.");
+        }
     }
 }

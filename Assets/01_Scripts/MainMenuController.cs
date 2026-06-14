@@ -1,19 +1,26 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // Línea obligatoria para poder cambiar de escenas
+using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
-    // Este método lo llamará el botón Play
+    // Este método lo llamará el botón Play en el Menú Principal
     public void PlayGame()
     {
-        // "SampleScene" debe ser el nombre exacto de la escena de tu juego
         SceneManager.LoadScene("SampleScene");
     }
 
-    // Este método lo llamará el botón Exit (Salir)
+    // Este método lo llamará el botón Exit en el Menú Principal
     public void ExitGame()
     {
         Debug.Log("El jugador cerró el juego.");
-        Application.Quit(); // Cierra el juego (funciona solo en el juego ya compilado/exportado)
+        Application.Quit();
+    }
+
+    // ¡NUEVO MÉTODO! Lo llamará tu botón en la Pantalla de Victoria
+    public void VolverAlMenu()
+    {
+        Debug.Log("Regresando al menú principal...");
+        // "MainMenu" debe ser el nombre exacto de la escena de tu menú
+        SceneManager.LoadScene("MainMenu");
     }
 }

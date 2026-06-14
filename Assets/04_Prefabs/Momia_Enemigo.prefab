@@ -108,17 +108,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemigoMomia
   velocidadCamino: 1
-  rangoDeteccionAtaque: 1.2
+  rangoDeteccionAtaque: 1
   cooldownAtaque: 1.5
   capaJugadores:
     serializedVersion: 2
     m_Bits: 1
   vidaMax: 3
-  capaSuelo:
+  capaObstaculos:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 576
   tamanoCajaCheck: {x: 0.2, y: 0.4}
   distanciaFrente: 0.3
+  tiempoMaxCaidaAlVacio: 3.5
 --- !u!50 &5839641583607482539
 Rigidbody2D:
   serializedVersion: 5
