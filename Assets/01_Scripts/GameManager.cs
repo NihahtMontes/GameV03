@@ -86,6 +86,15 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Método que llama un jugador en el instante en que sus corazones llegan a 0
     /// </summary>
+    public Vector3 GetSpawnPlayer1() => spawnPlayer1;
+    public Vector3 GetSpawnPlayer2() => spawnPlayer2;
+
+    private bool EsEscenaGriega()
+    {
+        string escena = SceneManager.GetActiveScene().name;
+        return escena == "Griegos" || escena == "Griego2";
+    }
+
     public void VerificarEstadoPartida()
     {
         if (gameOverActivado) return;
@@ -93,10 +102,23 @@ public class GameManager : MonoBehaviour
         bool p1Muerto = scriptP1 == null || scriptP1.EstaMuerto();
         bool p2Muerto = scriptP2 == null || scriptP2.EstaMuerto();
 
-        // CONDICIÓN DE GAME OVER: Si ambos cayeron en batalla
-        if (p1Muerto && p2Muerto)
+        Debug.Log($"VerificarEstadoPartida() - Escena: {SceneManager.GetActiveScene().name} | P1 Muerto: {p1Muerto} | P2 Muerto: {p2Muerto} | EsGriega: {EsEscenaGriega()}");
+
+        if (EsEscenaGriega())
         {
-            TriggerGameOver();
+            if (p1Muerto || p2Muerto)
+            {
+                Debug.Log("GAME OVER GRIEGO detectado! Iniciando corrutina...");
+                gameOverActivado = true;
+                StartCoroutine(GameOverGriegoCoroutine());
+            }
+        }
+        else
+        {
+            if (p1Muerto && p2Muerto)
+            {
+                TriggerGameOver();
+            }
         }
     }
 
@@ -134,10 +156,21 @@ public class GameManager : MonoBehaviour
     private void TriggerGameOver()
     {
         gameOverActivado = true;
-        Debug.Log("¡AMBOS JUGADORES HAN MUERTO! Regresando al Nivel 1...");
+        Debug.Log("¡AMBOS JUGADORES HAN MUERTO! Reiniciando nivel actual...");
 
-        // ¡REINICIO TOTAL! En lugar de ir al menú, los manda directo al inicio del juego
-        // Usamos el nombre exacto de tu nivel 1 que es "SampleScene"
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private IEnumerator GameOverGriegoCoroutine()
+    {
+        Debug.Log("GameOverGriegoCoroutine iniciada. Matando jugadores restantes...");
+
+        if (scriptP1 != null && !scriptP1.EstaMuerto()) scriptP1.MorirInstantaneo();
+        if (scriptP2 != null && !scriptP2.EstaMuerto()) scriptP2.MorirInstantaneo();
+
+        yield return new WaitForSeconds(0.5f);
+
+        Debug.Log("¡GAME OVER! Reiniciando escena Griegos...");
+        SceneManager.LoadScene("Griegos");
     }
 }

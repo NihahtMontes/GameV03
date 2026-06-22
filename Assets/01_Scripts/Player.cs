@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -72,7 +73,18 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        if (uiVida == null) uiVida = Object.FindFirstObjectByType<UI_Vida>();
+        if (uiVida == null)
+        {
+            UI_Vida[] todosLosUI = Object.FindObjectsByType<UI_Vida>(FindObjectsSortMode.None);
+            foreach (UI_Vida hud in todosLosUI)
+            {
+                if (hud.TagAsociado == gameObject.tag)
+                {
+                    uiVida = hud;
+                    break;
+                }
+            }
+        }
     }
 
     private void Update()
@@ -106,18 +118,32 @@ public class Player : MonoBehaviour
         }
     }
 
+    private bool EsEscenaGriega()
+    {
+        string escena = SceneManager.GetActiveScene().name;
+        return escena == "Griegos" || escena == "Griego2";
+    }
+
     private void ChequearCaidaAlVacio()
     {
-        // Si cae de largo y no está escalando, inicia el contador de muerte
         if (rb.linearVelocity.y < -1f && !isClimbing)
         {
             contadorTiempoCayendo += Time.deltaTime;
 
             if (contadorTiempoCayendo >= tiempoMaxCaidaAlVacio)
             {
-                Debug.Log(gameObject.name + " cayó al vacío del foso y murió.");
                 contadorTiempoCayendo = 0f;
-                Morir();
+
+                if (EsEscenaGriega())
+                {
+                    RecibirDanio(1);
+                    if (!estaMuerto) RespawnInmediato();
+                }
+                else
+                {
+                    Debug.Log(gameObject.name + " cayó al vacío del foso y murió.");
+                    Morir();
+                }
             }
         }
         else
@@ -367,6 +393,14 @@ public class Player : MonoBehaviour
         return estaMuerto;
     }
 
+    public void MorirInstantaneo()
+    {
+        if (estaMuerto) return;
+        vidaActual = 0;
+        if (uiVida != null) uiVida.ActualizarVidaUI(0);
+        Morir();
+    }
+
     private void Morir()
     {
         estaMuerto = true;
@@ -378,19 +412,33 @@ public class Player : MonoBehaviour
 
         if (AudioManager.instance != null) AudioManager.instance.PlaySFX(AudioManager.instance.died);
 
-        Debug.Log(gameObject.name + " ha desaparecido temporalmente.");
+        Debug.Log($"[Player.Morir] {gameObject.name} ha muerto. Llamando GameManager...");
 
-        if (GameManager.instance != null)
+        GameManager gm = GameManager.instance;
+        if (gm == null)
         {
-            GameManager.instance.VerificarEstadoPartida();
-            GameManager.instance.SolicitarRespawn(gameObject, gameObject.tag);
+            gm = Object.FindFirstObjectByType<GameManager>();
+            if (gm != null)
+            {
+                Debug.LogWarning($"[Player.Morir] {gameObject.name} - GameManager.instance era NULL, encontrado via FindFirstObjectByType.");
+            }
+        }
+
+        if (gm != null)
+        {
+            gm.VerificarEstadoPartida();
+            gm.SolicitarRespawn(gameObject, gameObject.tag);
+        }
+        else
+        {
+            Debug.LogError($"[Player.Morir] {gameObject.name} - No hay GameManager en la escena!");
         }
     }
 
     public void RevivirJugador()
     {
         estaMuerto = false;
-        vidaActual = 3; // Mantiene la penalización de 3 corazones
+        vidaActual = 3;
 
         if (uiVida != null)
         {
@@ -398,13 +446,63 @@ public class Player : MonoBehaviour
         }
         else
         {
-            uiVida = Object.FindFirstObjectByType<UI_Vida>();
+            UI_Vida[] todosLosUI = Object.FindObjectsByType<UI_Vida>(FindObjectsSortMode.None);
+            foreach (UI_Vida hud in todosLosUI)
+            {
+                if (hud.TagAsociado == gameObject.tag)
+                {
+                    uiVida = hud;
+                    break;
+                }
+            }
             if (uiVida != null) uiVida.ActualizarVidaUI(vidaActual);
         }
 
         rb.bodyType = RigidbodyType2D.Dynamic;
         GetComponent<Collider2D>().enabled = true;
         if (spriteRenderer != null) spriteRenderer.enabled = true;
+
+        StartCoroutine(RutinaInvencibilidad());
+    }
+
+    public void RespawnInmediato()
+    {
+        Vector3 spawn = Vector3.zero;
+        bool spawnEncontrado = false;
+
+        if (GameManager.instance != null)
+        {
+            spawn = (gameObject.tag == "Player")
+                ? GameManager.instance.GetSpawnPlayer1()
+                : GameManager.instance.GetSpawnPlayer2();
+            spawnEncontrado = true;
+            Debug.Log($"[RespawnInmediato] {gameObject.name} teletransportando a: {spawn}");
+        }
+        else
+        {
+            GameManager gm = Object.FindFirstObjectByType<GameManager>();
+            if (gm != null)
+            {
+                spawn = (gameObject.tag == "Player")
+                    ? gm.GetSpawnPlayer1()
+                    : gm.GetSpawnPlayer2();
+                spawnEncontrado = true;
+                Debug.Log($"[RespawnInmediato] {gameObject.name} teletransportando a: {spawn} (via FindFirstObjectByType)");
+            }
+            else
+            {
+                spawn = transform.position;
+                Debug.LogWarning($"[RespawnInmediato] {gameObject.name} - No hay GameManager! Respawn en posición actual.");
+            }
+        }
+
+        if (spawnEncontrado)
+        {
+            transform.position = spawn;
+        }
+
+        rb.linearVelocity = Vector2.zero;
+        contadorTiempoCayendo = 0f;
 
         StartCoroutine(RutinaInvencibilidad());
     }

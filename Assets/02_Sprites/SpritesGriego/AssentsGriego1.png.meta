@@ -1,0 +1,1115 @@
+fileFormatVersion: 2
+guid: 9468eb97fded98d478e5eb3fdb8ca928
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4983613640222871009
+    second: AssentsGriego1_0
+  - first:
+      213: -6629920467580988473
+    second: AssentsGriego1_1
+  - first:
+      213: -6940058420143563396
+    second: AssentsGriego1_2
+  - first:
+      213: 8257342555982488066
+    second: AssentsGriego1_3
+  - first:
+      213: 2051967531855373479
+    second: AssentsGriego1_4
+  - first:
+      213: -340290199815165917
+    second: AssentsGriego1_5
+  - first:
+      213: 2091958997038537103
+    second: AssentsGriego1_6
+  - first:
+      213: -2579392731917048982
+    second: AssentsGriego1_7
+  - first:
+      213: 7465163320018560018
+    second: AssentsGriego1_8
+  - first:
+      213: -3141531549526784042
+    second: AssentsGriego1_9
+  - first:
+      213: -6587645891018865918
+    second: AssentsGriego1_10
+  - first:
+      213: 2730351870032281298
+    second: AssentsGriego1_11
+  - first:
+      213: 7043641661354339898
+    second: AssentsGriego1_12
+  - first:
+      213: -331622772219286683
+    second: AssentsGriego1_13
+  - first:
+      213: -8442691063411911606
+    second: AssentsGriego1_14
+  - first:
+      213: -7847500967415206380
+    second: AssentsGriego1_15
+  - first:
+      213: -2663062216501358932
+    second: AssentsGriego1_16
+  - first:
+      213: 4110328444541905399
+    second: AssentsGriego1_17
+  - first:
+      213: -746195479670876043
+    second: AssentsGriego1_18
+  - first:
+      213: -2891258243254846982
+    second: AssentsGriego1_19
+  - first:
+      213: 7862975145323826643
+    second: AssentsGriego1_20
+  - first:
+      213: 4373664428154820162
+    second: AssentsGriego1_21
+  - first:
+      213: -422127752602672968
+    second: AssentsGriego1_22
+  - first:
+      213: -1886314859731286646
+    second: AssentsGriego1_23
+  - first:
+      213: -173519963394851389
+    second: AssentsGriego1_24
+  - first:
+      213: -4641859282635378450
+    second: AssentsGriego1_25
+  - first:
+      213: -5526517695288796347
+    second: AssentsGriego1_26
+  - first:
+      213: 6732440698465606680
+    second: AssentsGriego1_27
+  - first:
+      213: 5750116410638869892
+    second: AssentsGriego1_28
+  - first:
+      213: 1623378904897799293
+    second: AssentsGriego1_29
+  - first:
+      213: 6199875673571476090
+    second: AssentsGriego1_30
+  - first:
+      213: 6811213933763220901
+    second: AssentsGriego1_31
+  - first:
+      213: 5961760271032699684
+    second: AssentsGriego1_32
+  - first:
+      213: -787608930681842725
+    second: AssentsGriego1_33
+  - first:
+      213: -1686354011987033861
+    second: AssentsGriego1_34
+  - first:
+      213: -2214958655027257630
+    second: AssentsGriego1_35
+  - first:
+      213: -1705792490930228855
+    second: AssentsGriego1_36
+  - first:
+      213: -4380354817939887754
+    second: AssentsGriego1_37
+  - first:
+      213: -310034488417801143
+    second: AssentsGriego1_38
+  - first:
+      213: -4424448244954007799
+    second: AssentsGriego1_39
+  - first:
+      213: 6857525874927194885
+    second: AssentsGriego1_40
+  - first:
+      213: -3876388635023534807
+    second: AssentsGriego1_41
+  - first:
+      213: 2534875498414694723
+    second: AssentsGriego1_42
+  - first:
+      213: -6861542463623716895
+    second: AssentsGriego1_43
+  - first:
+      213: 1756801383963605905
+    second: AssentsGriego1_44
+  - first:
+      213: -2948980313352769946
+    second: AssentsGriego1_45
+  - first:
+      213: -8731227176359706000
+    second: AssentsGriego1_46
+  - first:
+      213: 2114527758832143373
+    second: AssentsGriego1_47
+  - first:
+      213: -1189104852592351384
+    second: AssentsGriego1_48
+  - first:
+      213: 3686651071867203590
+    second: AssentsGriego1_49
+  - first:
+      213: -5750787461649606819
+    second: AssentsGriego1_50
+  - first:
+      213: 4354048900084460169
+    second: AssentsGriego1_51
+  - first:
+      213: -1963797219803881536
+    second: AssentsGriego1_52
+  - first:
+      213: 8948983433076967196
+    second: AssentsGriego1_53
+  - first:
+      213: 4536732616421633881
+    second: AssentsGriego1_54
+  - first:
+      213: 3257002665922585880
+    second: AssentsGriego1_55
+  - first:
+      213: -5174957154000364242
+    second: AssentsGriego1_56
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PlataformaGrande
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 321
+        width: 277
+        height: 42
+      alignment: 9
+      pivot: {x: 0.025371559, y: 0.52981204}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ed8643933a592540800000000000000
+      internalID: 4983613640222871009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escalera
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 292
+        width: 108
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c35eb8267acdf3a0800000000000000
+      internalID: -6629920467580988473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pared
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 279
+        width: 37
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a4efd2399d0a7c10800000000000000
+      internalID: 2051967531855373479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlataformaMediana
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 281
+        width: 109
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f891a27cf91280d10800000000000000
+      internalID: 2091958997038537103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatafromaMediana1
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 280
+        width: 86
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a632cddf9f7243cd0800000000000000
+      internalID: -2579392731917048982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "PlataformaPeque\xF1a"
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 279
+        width: 71
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2146bf7cc76999760800000000000000
+      internalID: 7465163320018560018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "PlataformaPeque\xF1a1"
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 247
+        width: 76
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20342c707faf394a0800000000000000
+      internalID: -6587645891018865918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssentsGriego1_12
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 240
+        width: 76
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3eea2ea5ca00c160800000000000000
+      internalID: 7043641661354339898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Machon
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 170
+        width: 42
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56b607e78d6d56bf0800000000000000
+      internalID: -331622772219286683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MachonViejo
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 173
+        width: 41
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a44d7f8853985da80800000000000000
+      internalID: -8442691063411911606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParedVieha
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 174
+        width: 41
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cae0caa0607ea0bd0800000000000000
+      internalID: -2663062216501358932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssentsGriego1_17
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 199
+        width: 85
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f9aa1f51f1da0930800000000000000
+      internalID: 4110328444541905399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "PlataformaPeque\xF1a2"
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 207
+        width: 65
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 578173d2a2bf4a5f0800000000000000
+      internalID: -746195479670876043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "PlataformaPeque\xF1a3"
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 202
+        width: 63
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af9ffd042ff20e7d0800000000000000
+      internalID: -2891258243254846982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "PlataformaPeque\xF1ita1"
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 168
+        width: 46
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2461eeeef9062bc30800000000000000
+      internalID: 4373664428154820162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cubo
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 154
+        width: 42
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a850d2311a672d5e0800000000000000
+      internalID: -1886314859731286646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Escalera1
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 151
+        width: 96
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81cdc6f252f6e6d50800000000000000
+      internalID: 6732440698465606680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cubo1
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 120
+        width: 38
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d74cb425386678610800000000000000
+      internalID: 1623378904897799293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plataf
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 106
+        width: 142
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 981339564cec358e0800000000000000
+      internalID: -1705792490930228855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PortalRojo
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 79
+        width: 64
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 679a58e408ad533c0800000000000000
+      internalID: -4380354817939887754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PortalAzul
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 79
+        width: 62
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94cacb1864982bbf0800000000000000
+      internalID: -310034488417801143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PortalLila
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 79
+        width: 64
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9077a6053c33992c0800000000000000
+      internalID: -4424448244954007799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Obstaculopeque\xF1ito"
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 79
+        width: 31
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ef137cbb77e6c0a0800000000000000
+      internalID: -6861542463623716895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ObstaculoPeque\xF1ito1"
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 78
+        width: 33
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66eecf4870e1317d0800000000000000
+      internalID: -2948980313352769946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BanderaAzul
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 10
+        width: 45
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 072c7d3a42374d680800000000000000
+      internalID: -8731227176359706000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bandera Azul
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 10
+        width: 45
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0c84ec1bcf485d10800000000000000
+      internalID: 2114527758832143373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BanderaLila
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 10
+        width: 45
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8672a8ccf637f7fe0800000000000000
+      internalID: -1189104852592351384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtonAzulS
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 39
+        width: 48
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 600357dfd9d992330800000000000000
+      internalID: 3686651071867203590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtonRojoS
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 39
+        width: 48
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d57da99c5491130b0800000000000000
+      internalID: -5750787461649606819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtonLilaS
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 39
+        width: 47
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98ae638e760bc6c30800000000000000
+      internalID: 4354048900084460169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtonGrisS
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 39
+        width: 48
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cf90be45d03fb4e0800000000000000
+      internalID: -1963797219803881536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtonAzulP
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 11
+        width: 47
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c178865c40d213c70800000000000000
+      internalID: 8948983433076967196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtonRojoP
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 10
+        width: 48
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95f6dba2746b5fe30800000000000000
+      internalID: 4536732616421633881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtonLilaP
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 11
+        width: 47
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 815e0d61ba2333d20800000000000000
+      internalID: 3257002665922585880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtonGrisP
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 11
+        width: 48
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2d11f3f2ebde28b0800000000000000
+      internalID: -5174957154000364242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 80cbbf0b0081b934ea41961e49fd599b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      AssentsGriego1_11: 2730351870032281298
+      AssentsGriego1_12: 7043641661354339898
+      AssentsGriego1_15: -7847500967415206380
+      AssentsGriego1_17: 4110328444541905399
+      AssentsGriego1_2: -6940058420143563396
+      AssentsGriego1_20: 7862975145323826643
+      AssentsGriego1_22: -422127752602672968
+      AssentsGriego1_24: -173519963394851389
+      AssentsGriego1_25: -4641859282635378450
+      AssentsGriego1_26: -5526517695288796347
+      AssentsGriego1_28: 5750116410638869892
+      AssentsGriego1_3: 8257342555982488066
+      AssentsGriego1_30: 6199875673571476090
+      AssentsGriego1_31: 6811213933763220901
+      AssentsGriego1_32: 5961760271032699684
+      AssentsGriego1_33: -787608930681842725
+      AssentsGriego1_34: -1686354011987033861
+      AssentsGriego1_35: -2214958655027257630
+      AssentsGriego1_40: 6857525874927194885
+      AssentsGriego1_41: -3876388635023534807
+      AssentsGriego1_42: 2534875498414694723
+      AssentsGriego1_44: 1756801383963605905
+      AssentsGriego1_5: -340290199815165917
+      AssentsGriego1_9: -3141531549526784042
+      Bandera Azul: 2114527758832143373
+      BanderaAzul: -8731227176359706000
+      BanderaLila: -1189104852592351384
+      BtonAzulP: 8948983433076967196
+      BtonAzulS: 3686651071867203590
+      BtonGrisP: -5174957154000364242
+      BtonGrisS: -1963797219803881536
+      BtonLilaP: 3257002665922585880
+      BtonLilaS: 4354048900084460169
+      BtonRojoP: 4536732616421633881
+      BtonRojoS: -5750787461649606819
+      Cubo: -1886314859731286646
+      Cubo1: 1623378904897799293
+      Escalera: -6629920467580988473
+      Escalera1: 6732440698465606680
+      Machon: -331622772219286683
+      MachonViejo: -8442691063411911606
+      "ObstaculoPeque\xF1ito1": -2948980313352769946
+      "Obstaculopeque\xF1ito": -6861542463623716895
+      Pared: 2051967531855373479
+      ParedVieha: -2663062216501358932
+      Plataf: -1705792490930228855
+      PlataformaGrande: 4983613640222871009
+      PlataformaMediana: 2091958997038537103
+      "PlataformaPeque\xF1a": 7465163320018560018
+      "PlataformaPeque\xF1a1": -6587645891018865918
+      "PlataformaPeque\xF1a2": -746195479670876043
+      "PlataformaPeque\xF1a3": -2891258243254846982
+      "PlataformaPeque\xF1ita1": 4373664428154820162
+      PlatafromaMediana1: -2579392731917048982
+      PortalAzul: -310034488417801143
+      PortalLila: -4424448244954007799
+      PortalRojo: -4380354817939887754
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

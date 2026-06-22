@@ -6,7 +6,7 @@ public class MainMenuController : MonoBehaviour
     // Este método lo llamará el botón Play en el Menú Principal
     public void PlayGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Griegos");
     }
 
     // Este método lo llamará el botón Exit en el Menú Principal
